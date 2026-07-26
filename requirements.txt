@@ -1,0 +1,4 @@
+Flask==3.0.0
+SpeechRecognition
+nltk==3.8.1
+werkzeug==3.0.1

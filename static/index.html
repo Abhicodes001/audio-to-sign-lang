@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignWave — Real-Time Audio to Sign Language</title>
+  <meta name="description" content="A maximalist real-time audio to sign language converter. Speak into your mic and watch every word bloom into sign language videos and signs.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.min.js"></script>
+</head>
+<body>
+
+  <!-- Top Marquee Banner Ticker -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>EVERY VOICE <span class="marquee-star">✦</span></span>
+      <span>EVERY HAND <span class="marquee-star">✦</span></span>
+      <span>SPEAK IT <span class="marquee-star">✦</span></span>
+      <span>SIGN IT <span class="marquee-star">✦</span></span>
+      <span>NO BARRIERS <span class="marquee-star">✦</span></span>
+      <span>REAL TIME <span class="marquee-star">✦</span></span>
+      <span>EVERY VOICE <span class="marquee-star">✦</span></span>
+      <span>EVERY HAND <span class="marquee-star">✦</span></span>
+      <span>SPEAK IT <span class="marquee-star">✦</span></span>
+      <span>SIGN IT <span class="marquee-star">✦</span></span>
+      <span>NO BARRIERS <span class="marquee-star">✦</span></span>
+      <span>REAL TIME <span class="marquee-star">✦</span></span>
+    </div>
+  </div>
+
+  <div class="app-viewport">
+    
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="badge-pill">
+        <span>⚡</span> LIVE TRANSLATION ENGINE
+      </div>
+      <h1 class="main-title">
+        <div class="title-line-1">AUDIO TO</div>
+        <div class="title-line-2">
+          <span class="word-sign">SIGN</span>
+          <span class="badge-language">LANGUAGE</span>
+        </div>
+      </h1>
+      <p class="hero-subtitle">
+        Bridge the communication gap. Speak out loud and watch every syllable burst into motion.
+      </p>
+      <button id="btnHowItWorks" class="btn-how-it-works">
+        <span>❓</span> HOW IT WORKS
+      </button>
+    </header>
+
+    <!-- Main Microphone Control Card -->
+    <section class="control-card" id="controlCard">
+      <div class="mic-btn-wrapper">
+        <button id="recordBtn" class="mic-btn" aria-label="Toggle Microphone Recording">
+          <svg viewBox="0 0 24 24" id="micIcon">
+            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+          </svg>
+        </button>
+      </div>
+      <h2 id="micLabel" class="mic-label">START RECORDING</h2>
+      <p id="micSublabel" class="mic-sublabel">Idle — tap the big button</p>
+      
+      <div class="equalizer-dots">
+        <div class="eq-dot"></div>
+        <div class="eq-dot"></div>
+        <div class="eq-dot"></div>
+        <div class="eq-dot"></div>
+        <div class="eq-dot"></div>
+        <div class="eq-dot"></div>
+      </div>
+    </section>
+
+    <!-- Recognized Text Display Card -->
+    <section class="neo-card card-text-box">
+      <div class="card-header-badge">
+        <span>≈</span> RECOGNIZED TEXT
+      </div>
+      <p id="transcriptionText" class="transcription-output placeholder">
+        Your words will appear here, loud and proud.
+      </p>
+    </section>
+
+    <!-- Sign Stage Player Box -->
+    <section class="neo-card card-sign-stage">
+      <div class="stage-content">
+        
+        <!-- Video Player View -->
+        <div id="videoContainer" class="video-container">
+          <video id="signVideo" muted playsinline></video>
+        </div>
+
+        <!-- Placeholder Stage View -->
+        <div id="stagePlaceholder" class="stage-placeholder">
+          <div class="stage-dots">
+            <div class="stage-dot"></div>
+            <div class="stage-dot"></div>
+            <div class="stage-dot"></div>
+            <div class="stage-dot"></div>
+            <div class="stage-dot"></div>
+            <div class="stage-dot"></div>
+          </div>
+          <p id="stageTitle" class="stage-title">SIGN STAGE STANDING BY</p>
+          
+          <!-- Real-Time Fingerspelling Tiles -->
+          <div id="fingerspellingTiles" class="fingerspelling-tiles"></div>
+        </div>
+
+      </div>
+
+      <div class="stage-footer">
+        <div id="currentWordBadge" class="stage-word-badge">-</div>
+      </div>
+    </section>
+
+    <!-- Session Stats Grid (3 Columns) -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div id="statWords" class="stat-val">0</div>
+        <div class="stat-lbl">WORDS</div>
+      </div>
+      <div class="stat-card">
+        <div id="statLetters" class="stat-val">0</div>
+        <div class="stat-lbl">LETTERS</div>
+      </div>
+      <div class="stat-card">
+        <div id="statStatus" class="stat-val">IDLE</div>
+        <div class="stat-lbl">STATUS</div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Interactive Quick Walkthrough Modal -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-box">
+      <button id="modalCloseBtn" class="modal-close-btn">✕</button>
+      
+      <div class="modal-step-badge">
+        <span>⚡</span> QUICK WALKTHROUGH
+      </div>
+
+      <div id="modalIcon" class="modal-icon-container">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+          <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+        </svg>
+      </div>
+
+      <div>
+        <h3 id="modalTitle" class="modal-step-title">1. Allow the mic</h3>
+        <p id="modalDesc" class="modal-step-desc">
+          Tap the big gradient button and approve the browser's microphone prompt. Speech recognition and audio analysis run live in your session.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-dots" id="modalDots">
+          <div class="modal-dot active"></div>
+          <div class="modal-dot"></div>
+          <div class="modal-dot"></div>
+          <div class="modal-dot"></div>
+          <div class="modal-dot"></div>
+        </div>
+
+        <div class="modal-nav-btns">
+          <button id="modalPrevBtn" class="modal-btn-prev">←</button>
+          <button id="modalNextBtn" class="modal-btn-next">
+            <span id="modalNextLabel">NEXT</span> <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
