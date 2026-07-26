@@ -91,6 +91,21 @@ function updateModalStep(stepIndex) {
   }
 }
 
+// Demo Button Listener
+const btnTryDemo = document.getElementById('btnTryDemo');
+if (btnTryDemo) {
+  btnTryDemo.addEventListener('click', () => {
+    updateTranscriptionUI('hello welcome');
+    videoQueue = [
+      { word: 'hello', type: 'word', url: '/datasets/hello.mp4' },
+      { word: 'welcome', type: 'word', url: '/datasets/welcome.mp4' }
+    ];
+    if (!isPlayingVideo) {
+      playNextSignVideo();
+    }
+  });
+}
+
 // Modal Event Listeners
 btnHowItWorks.addEventListener('click', () => {
   updateModalStep(0);
