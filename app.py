@@ -14,6 +14,22 @@ def serve_index():
 def serve_datasets(filename):
     return send_from_directory('datasets', filename)
 
+@app.route('/api/process-text', methods=['POST'])
+def handle_text():
+    data = request.get_json() or {}
+    text = data.get('text', '')
+    if not text:
+        return jsonify({'error': 'No text provided'}), 400
+        
+    processed_words = process_text(text)
+    video_sequence = map_words_to_videos(processed_words)
+    
+    return jsonify({
+        'original_text': text,
+        'processed_words': processed_words,
+        'video_sequence': video_sequence
+    })
+
 @app.route('/api/process-audio', methods=['POST'])
 def handle_audio():
     if 'audio' not in request.files:
@@ -39,6 +55,5 @@ def handle_audio():
     })
 
 if __name__ == '__main__':
-    # Ensure datasets exists
     os.makedirs('datasets', exist_ok=True)
     app.run(debug=True, port=5000)

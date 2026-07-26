@@ -214,15 +214,10 @@ function startRecording() {
   stageTitle.textContent = 'SIGN STAGE ACTIVE';
   statStatus.textContent = 'LIVE';
 
-  // Stop current video playback
   videoQueue = [];
   isPlayingVideo = false;
   signVideo.pause();
   signVideo.removeAttribute('src');
-  videoContainer.style.display = 'none';
-  stagePlaceholder.style.display = 'flex';
-  currentWordBadge.textContent = 'Listening...';
-  fingerspellingTiles.innerHTML = '';
 }
 
 function stopRecording() {
@@ -230,18 +225,26 @@ function stopRecording() {
 
   recordBtn.classList.remove('recording');
   controlCard.classList.remove('recording');
-  micLabel.textContent = 'PROCESSING';
-  micSublabel.textContent = 'Translating audio into signs...';
+  micLabel.textContent = 'TRANSLATING';
+  micSublabel.textContent = 'Converting words to sign language animations...';
   statStatus.textContent = 'PROCESSING';
 
   if (speechRecognizer) {
     try { speechRecognizer.stop(); } catch (e) {}
   }
 
-  recorder.stopRecording(async () => {
-    const audioBlob = recorder.getBlob();
-    await sendAudioToBackend(audioBlob);
-  });
+  // If we already have live text from Web Speech API, immediately process text for sign videos!
+  if (currentText && currentText.trim()) {
+    processTextForSignVideos(currentText);
+  }
+
+  // Send audio file blob as backup
+  if (recorder) {
+    recorder.stopRecording(async () => {
+      const audioBlob = recorder.getBlob();
+      await sendAudioToBackend(audioBlob);
+    });
+  }
 }
 
 function updateTranscriptionUI(text) {
@@ -256,11 +259,38 @@ function updateTranscriptionUI(text) {
   statWords.textContent = words;
   statLetters.textContent = letters;
 
-  // Render Live Fingerspelling Tiles for the latest word
-  const wordList = text.trim().split(/\s+/);
-  if (wordList.length > 0) {
-    const lastWord = wordList[wordList.length - 1].toUpperCase();
-    renderFingerspellingTiles(lastWord);
+  // Real-time sign mapping as user speaks
+  if (text.trim().length > 2) {
+    processTextForSignVideos(text);
+  }
+}
+
+// Process Text to Sign Language Videos via Backend API (/api/process-text)
+async function processTextForSignVideos(text) {
+  try {
+    const response = await fetch('/api/process-text', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: text })
+    });
+
+    const data = await response.json();
+
+    micLabel.textContent = 'START RECORDING';
+    micSublabel.textContent = 'Tap the big button to record again';
+    statStatus.textContent = 'IDLE';
+
+    if (response.ok && data.video_sequence && data.video_sequence.length > 0) {
+      videoQueue = data.video_sequence;
+      if (!isPlayingVideo) {
+        playNextSignVideo();
+      }
+    } else {
+      spellOutTextLetters(text);
+    }
+  } catch (err) {
+    console.error("Text processing error:", err);
+    spellOutTextLetters(text);
   }
 }
 
@@ -277,11 +307,11 @@ function renderFingerspellingTiles(word, activeChar = null) {
     fingerspellingTiles.appendChild(tile);
   }
   if (cleanWord) {
-    currentWordBadge.textContent = activeChar ? `Fingerspelling: ${activeChar}` : `Word: ${cleanWord}`;
+    currentWordBadge.textContent = activeChar ? `Fingerspelling: ${activeChar}` : `Signing: ${cleanWord}`;
   }
 }
 
-// Send Captured Audio to Backend API (/api/process-audio)
+// Send Audio Blob to Backend API (/api/process-audio)
 async function sendAudioToBackend(audioBlob) {
   const formData = new FormData();
   formData.append('audio', audioBlob, 'recording.wav');
@@ -298,38 +328,24 @@ async function sendAudioToBackend(audioBlob) {
     micSublabel.textContent = 'Tap the big button to record again';
     statStatus.textContent = 'IDLE';
 
-    if (response.ok) {
+    if (response.ok && data.video_sequence && data.video_sequence.length > 0) {
       if (data.original_text) {
         updateTranscriptionUI(data.original_text);
       }
-
-      if (data.video_sequence && data.video_sequence.length > 0) {
-        videoQueue = data.video_sequence;
-        if (!isPlayingVideo) {
-          playNextSignVideo();
-        }
-      } else {
-        // Fallback: If no matching videos exist for words, spell out text letter by letter
-        const textToSpell = data.original_text || currentText;
-        if (textToSpell) {
-          spellOutTextLetters(textToSpell);
-        }
-      }
-    } else {
-      if (!currentText) {
-        transcriptionText.textContent = data.error || 'Could not recognize speech.';
-        transcriptionText.classList.add('placeholder');
+      videoQueue = data.video_sequence;
+      if (!isPlayingVideo) {
+        playNextSignVideo();
       }
     }
   } catch (err) {
-    console.error("API error:", err);
+    console.error("Audio API error:", err);
     micLabel.textContent = 'START RECORDING';
-    micSublabel.textContent = 'Error connecting to server';
+    micSublabel.textContent = 'Tap the big button to record again';
     statStatus.textContent = 'IDLE';
   }
 }
 
-// Spell out letters dynamically if no video sequence returned
+// Spell out letters dynamically if no full word video exists
 function spellOutTextLetters(text) {
   const words = text.trim().split(/\s+/);
   const queue = [];
@@ -354,7 +370,7 @@ function spellOutTextLetters(text) {
   }
 }
 
-// Play videos sequentially on Sign Stage
+// Play sign language MP4 videos sequentially on the Sign Stage
 function playNextSignVideo() {
   if (videoQueue.length === 0) {
     isPlayingVideo = false;
@@ -370,6 +386,7 @@ function playNextSignVideo() {
   isPlayingVideo = true;
   const item = videoQueue.shift();
 
+  // ALWAYS MAKE VIDEO CONTAINER VISIBLE
   stagePlaceholder.style.display = 'none';
   videoContainer.style.display = 'block';
 
@@ -386,7 +403,7 @@ function playNextSignVideo() {
   signVideo.load();
 
   signVideo.oncanplay = () => {
-    signVideo.playbackRate = 0.7;
+    signVideo.playbackRate = 0.75;
     signVideo.play().catch(e => console.log("Video play error:", e));
   };
 
@@ -395,7 +412,8 @@ function playNextSignVideo() {
   };
 
   signVideo.onerror = () => {
-    // If specific video fails, fallback to letter video or skip
+    console.error("Video file not found for:", item.url);
+    // If word video missing, expand into letter videos
     if (item.type !== 'letter' && item.word) {
       const letters = item.word.toLowerCase().split('');
       const letterItems = letters.map(c => ({
@@ -425,7 +443,7 @@ function startIdleDemoLoop() {
   playNextSignVideo();
 }
 
-// Automatically start continuous demo sign playback on page load
+// Automatically start continuous demo sign video playback on page load
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(startIdleDemoLoop, 500);
+  setTimeout(startIdleDemoLoop, 400);
 });
