@@ -29,6 +29,7 @@ const modalIcon = document.getElementById('modalIcon');
 const modalDots = document.getElementById('modalDots').children;
 
 let isRecording = false;
+let isUserSession = false;
 let recorder = null;
 let stream = null;
 let speechRecognizer = null;
@@ -36,6 +37,15 @@ let speechRecognizer = null;
 let currentText = '';
 let videoQueue = [];
 let isPlayingVideo = false;
+let idleDemoTimeout = null;
+
+// Default Demo Queue for continuous Sign Stage playback
+const DEMO_SEQUENCE = [
+  { word: 'hello', type: 'word', url: '/datasets/hello.mp4' },
+  { word: 'sign', type: 'word', url: '/datasets/sign.mp4' },
+  { word: 'language', type: 'word', url: '/datasets/language.mp4' },
+  { word: 'welcome', type: 'word', url: '/datasets/welcome.mp4' }
+];
 
 // Walkthrough Steps Data
 const walkthroughSteps = [
@@ -75,7 +85,6 @@ function updateModalStep(stepIndex) {
   modalDesc.textContent = step.desc;
   modalIcon.innerHTML = step.icon;
 
-  // Update dots
   for (let i = 0; i < modalDots.length; i++) {
     if (i === stepIndex) {
       modalDots[i].classList.add('active');
@@ -91,26 +100,13 @@ function updateModalStep(stepIndex) {
   }
 }
 
-// Demo Button Listener
-const btnTryDemo = document.getElementById('btnTryDemo');
-if (btnTryDemo) {
-  btnTryDemo.addEventListener('click', () => {
-    updateTranscriptionUI('hello welcome');
-    videoQueue = [
-      { word: 'hello', type: 'word', url: '/datasets/hello.mp4' },
-      { word: 'welcome', type: 'word', url: '/datasets/welcome.mp4' }
-    ];
-    if (!isPlayingVideo) {
-      playNextSignVideo();
-    }
+// Modal Event Listeners
+if (btnHowItWorks) {
+  btnHowItWorks.addEventListener('click', () => {
+    updateModalStep(0);
+    modalOverlay.classList.add('active');
   });
 }
-
-// Modal Event Listeners
-btnHowItWorks.addEventListener('click', () => {
-  updateModalStep(0);
-  modalOverlay.classList.add('active');
-});
 
 modalCloseBtn.addEventListener('click', () => {
   modalOverlay.classList.remove('active');
@@ -143,12 +139,11 @@ async function setupAudio() {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (err) {
       console.error("Microphone access error:", err);
-      alert("Please allow microphone access to use SignWave.");
+      alert("Please allow microphone access to record voice.");
       return false;
     }
   }
 
-  // Setup Web Speech API if supported in browser
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (SpeechRecognition && !speechRecognizer) {
     speechRecognizer = new SpeechRecognition();
@@ -188,6 +183,8 @@ recordBtn.addEventListener('click', async () => {
 
 function startRecording() {
   isRecording = true;
+  isUserSession = true;
+  clearTimeout(idleDemoTimeout);
   currentText = '';
 
   // Initialize RecordRTC
@@ -217,14 +214,14 @@ function startRecording() {
   stageTitle.textContent = 'SIGN STAGE ACTIVE';
   statStatus.textContent = 'LIVE';
 
-  // Reset video player
+  // Stop current video playback
   videoQueue = [];
   isPlayingVideo = false;
   signVideo.pause();
   signVideo.removeAttribute('src');
   videoContainer.style.display = 'none';
   stagePlaceholder.style.display = 'flex';
-  currentWordBadge.textContent = '-';
+  currentWordBadge.textContent = 'Listening...';
   fingerspellingTiles.innerHTML = '';
 }
 
@@ -267,17 +264,20 @@ function updateTranscriptionUI(text) {
   }
 }
 
-function renderFingerspellingTiles(word) {
+function renderFingerspellingTiles(word, activeChar = null) {
   fingerspellingTiles.innerHTML = '';
-  const cleanWord = word.replace(/[^A-Z0-9]/g, '');
+  const cleanWord = word.toUpperCase().replace(/[^A-Z0-9]/g, '');
   for (let char of cleanWord) {
     const tile = document.createElement('div');
     tile.className = 'tile';
+    if (activeChar && char === activeChar.toUpperCase()) {
+      tile.classList.add('active');
+    }
     tile.textContent = char;
     fingerspellingTiles.appendChild(tile);
   }
   if (cleanWord) {
-    currentWordBadge.textContent = `Word: ${cleanWord}`;
+    currentWordBadge.textContent = activeChar ? `Fingerspelling: ${activeChar}` : `Word: ${cleanWord}`;
   }
 }
 
@@ -309,8 +309,11 @@ async function sendAudioToBackend(audioBlob) {
           playNextSignVideo();
         }
       } else {
-        stageTitle.textContent = 'NO MATCHING SIGN VIDEOS FOUND';
-        currentWordBadge.textContent = 'Finished';
+        // Fallback: If no matching videos exist for words, spell out text letter by letter
+        const textToSpell = data.original_text || currentText;
+        if (textToSpell) {
+          spellOutTextLetters(textToSpell);
+        }
       }
     } else {
       if (!currentText) {
@@ -326,16 +329,41 @@ async function sendAudioToBackend(audioBlob) {
   }
 }
 
+// Spell out letters dynamically if no video sequence returned
+function spellOutTextLetters(text) {
+  const words = text.trim().split(/\s+/);
+  const queue = [];
+
+  for (let word of words) {
+    const cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+    for (let char of cleanWord) {
+      queue.push({
+        word: char,
+        parentWord: word,
+        type: 'letter',
+        url: `/datasets/${char}.mp4`
+      });
+    }
+  }
+
+  if (queue.length > 0) {
+    videoQueue = queue;
+    if (!isPlayingVideo) {
+      playNextSignVideo();
+    }
+  }
+}
+
 // Play videos sequentially on Sign Stage
 function playNextSignVideo() {
   if (videoQueue.length === 0) {
     isPlayingVideo = false;
-    stageTitle.textContent = 'SIGN STAGE STANDING BY';
-    setTimeout(() => {
-      videoContainer.style.display = 'none';
-      stagePlaceholder.style.display = 'flex';
-      currentWordBadge.textContent = 'Completed';
-    }, 1500);
+    stageTitle.textContent = 'DEMO SIGN STAGE';
+    
+    // Resume continuous demo loop after 3 seconds of idle time
+    idleDemoTimeout = setTimeout(() => {
+      startIdleDemoLoop();
+    }, 3000);
     return;
   }
 
@@ -346,10 +374,11 @@ function playNextSignVideo() {
   videoContainer.style.display = 'block';
 
   if (item.type === 'letter') {
-    currentWordBadge.textContent = `Letter: ${item.word}`;
-    renderFingerspellingTiles(item.word);
+    currentWordBadge.textContent = `Letter: ${item.word.toUpperCase()}`;
+    const wordContext = item.parentWord || item.word;
+    renderFingerspellingTiles(wordContext, item.word);
   } else {
-    currentWordBadge.textContent = `Signing: ${item.word}`;
+    currentWordBadge.textContent = `Signing: ${item.word.toUpperCase()}`;
     renderFingerspellingTiles(item.word);
   }
 
@@ -362,11 +391,41 @@ function playNextSignVideo() {
   };
 
   signVideo.onended = () => {
-    setTimeout(playNextSignVideo, 300);
+    setTimeout(playNextSignVideo, 250);
   };
 
   signVideo.onerror = () => {
-    console.error("Failed to load video:", item.url);
+    // If specific video fails, fallback to letter video or skip
+    if (item.type !== 'letter' && item.word) {
+      const letters = item.word.toLowerCase().split('');
+      const letterItems = letters.map(c => ({
+        word: c,
+        parentWord: item.word,
+        type: 'letter',
+        url: `/datasets/${c}.mp4`
+      }));
+      videoQueue.unshift(...letterItems);
+    }
     playNextSignVideo();
   };
 }
+
+// Continuous Idle Demo Sign Loop
+function startIdleDemoLoop() {
+  if (isRecording || isPlayingVideo) return;
+
+  if (transcriptionText.classList.contains('placeholder') || !isUserSession) {
+    transcriptionText.textContent = "Demonstration: HELLO SIGN LANGUAGE WELCOME";
+    transcriptionText.classList.remove('placeholder');
+    statWords.textContent = '4';
+    statLetters.textContent = '26';
+  }
+
+  videoQueue = [...DEMO_SEQUENCE];
+  playNextSignVideo();
+}
+
+// Automatically start continuous demo sign playback on page load
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(startIdleDemoLoop, 500);
+});
