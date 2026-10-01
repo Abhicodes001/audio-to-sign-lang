@@ -39,3 +39,9 @@ share/python-wheels/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Logs and local buffers
+*.log
+*.err
+.freebuff/
+

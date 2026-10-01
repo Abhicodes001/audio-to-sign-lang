@@ -7,6 +7,9 @@
   <meta name="description" content="A maximalist real-time audio to sign language converter. Speak into your mic and watch every word bloom into sign language videos and signs.">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.min.js"></script>
+  <!-- MediaPipe AI Vision Pipeline -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -50,70 +53,211 @@
       </button>
     </header>
 
-    <!-- Main Microphone Control Card -->
-    <section class="control-card" id="controlCard">
-      <div class="mic-btn-wrapper">
-        <button id="recordBtn" class="mic-btn" aria-label="Toggle Microphone Recording">
-          <svg viewBox="0 0 24 24" id="micIcon">
-            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
-          </svg>
-        </button>
-      </div>
-      <h2 id="micLabel" class="mic-label">START RECORDING</h2>
-      <p id="micSublabel" class="mic-sublabel">Idle — tap the big button</p>
-      
-      <div class="equalizer-dots">
-        <div class="eq-dot"></div>
-        <div class="eq-dot"></div>
-        <div class="eq-dot"></div>
-        <div class="eq-dot"></div>
-        <div class="eq-dot"></div>
-        <div class="eq-dot"></div>
-      </div>
-    </section>
+    <!-- Dual-Mode Navigation Switcher -->
+    <nav class="mode-navigation" aria-label="Translation Modes">
+      <button id="tabAudioToSign" class="mode-tab active" type="button">
+        <span class="mode-tab-icon">🎙️</span>
+        <span class="mode-tab-text">SPEECH ➔ SIGN</span>
+        <span class="mode-tab-tag">TRANSLATE</span>
+      </button>
+      <button id="tabSignToText" class="mode-tab" type="button">
+        <span class="mode-tab-icon">🤟</span>
+        <span class="mode-tab-text">SIGN ➔ SPEECH & TEXT</span>
+        <span class="mode-tab-tag neon-tag">AI WEBCAM</span>
+      </button>
+    </nav>
 
-    <!-- Recognized Text Display Card -->
-    <section class="neo-card card-text-box">
-      <div class="card-header-badge">
-        <span>≈</span> RECOGNIZED TEXT
-      </div>
-      <p id="transcriptionText" class="transcription-output placeholder">
-        Your words will appear here, loud and proud.
-      </p>
-    </section>
-
-    <!-- Sign Stage Player Box -->
-    <section class="neo-card card-sign-stage">
-      <div class="stage-content">
+    <!-- ================= MODE 1: SPEECH TO SIGN VIEW ================= -->
+    <div id="audioToSignView" class="mode-view active">
+      <!-- Main Microphone Control Card -->
+      <section class="control-card" id="controlCard">
+        <div class="mic-btn-wrapper">
+          <button id="recordBtn" class="mic-btn" aria-label="Toggle Microphone Recording">
+            <svg viewBox="0 0 24 24" id="micIcon">
+              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+            </svg>
+          </button>
+        </div>
+        <h2 id="micLabel" class="mic-label">START RECORDING</h2>
+        <p id="micSublabel" class="mic-sublabel">Idle — tap the big button</p>
         
-        <!-- Video Player View -->
-        <div id="videoContainer" class="video-container">
-          <video id="signVideo" muted playsinline></video>
+        <div class="equalizer-dots">
+          <div class="eq-dot"></div>
+          <div class="eq-dot"></div>
+          <div class="eq-dot"></div>
+          <div class="eq-dot"></div>
+          <div class="eq-dot"></div>
+          <div class="eq-dot"></div>
         </div>
+      </section>
 
-        <!-- Placeholder Stage View -->
-        <div id="stagePlaceholder" class="stage-placeholder">
-          <div class="stage-dots">
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
-            <div class="stage-dot"></div>
+      <!-- Recognized Text Display Card -->
+      <section class="neo-card card-text-box">
+        <div class="card-header-badge">
+          <span>≈</span> RECOGNIZED TEXT
+        </div>
+        <p id="transcriptionText" class="transcription-output placeholder">
+          Your words will appear here, loud and proud.
+        </p>
+      </section>
+
+      <!-- Sign Stage Player Box -->
+      <section class="neo-card card-sign-stage">
+        <div class="stage-content">
+          <!-- Video Player View -->
+          <div id="videoContainer" class="video-container">
+            <video id="signVideo" muted playsinline></video>
           </div>
-          <p id="stageTitle" class="stage-title">SIGN STAGE STANDING BY</p>
-          
-          <!-- Real-Time Fingerspelling Tiles -->
-          <div id="fingerspellingTiles" class="fingerspelling-tiles"></div>
+
+          <!-- Placeholder Stage View -->
+          <div id="stagePlaceholder" class="stage-placeholder">
+            <div class="stage-dots">
+              <div class="stage-dot"></div>
+              <div class="stage-dot"></div>
+              <div class="stage-dot"></div>
+              <div class="stage-dot"></div>
+              <div class="stage-dot"></div>
+              <div class="stage-dot"></div>
+            </div>
+            <p id="stageTitle" class="stage-title">SIGN STAGE STANDING BY</p>
+            
+            <!-- Real-Time Fingerspelling Tiles -->
+            <div id="fingerspellingTiles" class="fingerspelling-tiles"></div>
+          </div>
         </div>
 
-      </div>
+        <div class="stage-footer">
+          <div id="currentWordBadge" class="stage-word-badge">-</div>
+        </div>
+      </section>
+    </div>
 
-      <div class="stage-footer">
-        <div id="currentWordBadge" class="stage-word-badge">-</div>
-      </div>
-    </section>
+    <!-- ================= MODE 2: SIGN TO TEXT & SPEECH VIEW ================= -->
+    <div id="signToTextView" class="mode-view" style="display: none;">
+      
+      <!-- Webcam & AI Skeleton Tracker Stage -->
+      <section class="neo-card card-camera-stage">
+        <div class="card-header-flex">
+          <div class="card-header-badge">
+            <span>📷</span> WEBCAM AI SKELETON TRACKER
+          </div>
+          <div class="cam-status-indicators">
+            <span id="camStatusBadge" class="cam-status-pill status-off">CAMERA OFF</span>
+            <span id="handCountBadge" class="hand-count-pill">0 HANDS</span>
+          </div>
+        </div>
+
+        <div class="webcam-viewport">
+          <video id="webcamElement" playsinline muted></video>
+          <canvas id="handCanvas"></canvas>
+          
+          <!-- Idle Overlay before camera starts -->
+          <div id="cameraPromptOverlay" class="camera-prompt-overlay">
+            <div class="prompt-icon">🤟</div>
+            <h3>ACTIVATE WEBCAM</h3>
+            <p>Position your hand within the frame. Real-time MediaPipe AI will track 21 skeletal landmarks and translate your signs.</p>
+            <button id="btnStartCamera" class="btn-neo-action pulse-glow" type="button">
+              <span>▶</span> START CAMERA
+            </button>
+          </div>
+
+          <!-- Active Camera Controls Overlay -->
+          <div id="camControlBar" class="cam-control-bar" style="display: none;">
+            <button id="btnStopCamera" class="cam-btn danger" type="button" title="Stop Camera">
+              <span>⏹</span> STOP
+            </button>
+            <button id="btnFlipCamera" class="cam-btn" type="button" title="Flip Mirror">
+              <span>🔄</span> MIRROR
+            </button>
+            <div class="fps-meter">
+              <span id="fpsDisplay">0</span> FPS
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real-Time AI Prediction HUD -->
+      <section class="prediction-hud-grid">
+        <!-- Current Detected Sign -->
+        <div class="neo-card card-prediction">
+          <div class="card-header-badge">
+            <span>⚡</span> DETECTED GESTURE
+          </div>
+          <div class="predicted-sign-display">
+            <div id="predictedSignBadge" class="predicted-sign-main">IDLE</div>
+            <div id="predictedSignDesc" class="predicted-sign-sub">Show your hand clearly</div>
+          </div>
+          
+          <div class="confidence-container">
+            <div class="confidence-labels">
+              <span>CONFIDENCE</span>
+              <span id="confidencePercentage">0%</span>
+            </div>
+            <div class="confidence-track">
+              <div id="confidenceBar" class="confidence-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <div class="commit-progress-wrapper">
+            <div class="commit-progress-bar">
+              <div id="commitFill" class="commit-fill" style="width: 0%;"></div>
+            </div>
+            <span class="commit-hint">Hold steady to add word to sentence</span>
+          </div>
+        </div>
+
+        <!-- Live Sentence Builder & TTS Output -->
+        <div class="neo-card card-sentence-builder">
+          <div class="card-header-flex">
+            <div class="card-header-badge">
+              <span>💬</span> TRANSLATED SENTENCE
+            </div>
+            <label class="auto-speak-toggle" title="Speak word automatically when detected">
+              <input type="checkbox" id="toggleAutoSpeak" checked>
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">AUTO-SPEAK</span>
+            </label>
+          </div>
+
+          <div id="sentenceDisplay" class="sentence-output placeholder">
+            Signed words will accumulate here...
+          </div>
+
+          <div class="sentence-actions">
+            <button id="btnSpeakSentence" class="action-btn btn-primary" type="button" title="Speak Aloud">
+              <span>🔊</span> SPEAK
+            </button>
+            <button id="btnCopySentence" class="action-btn" type="button" title="Copy to Clipboard">
+              <span>📋</span> COPY
+            </button>
+            <button id="btnBackspaceSentence" class="action-btn" type="button" title="Remove Last Word">
+              <span>⌫</span> DELETE
+            </button>
+            <button id="btnClearSentence" class="action-btn btn-danger" type="button" title="Clear All">
+              <span>✕</span> CLEAR
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supported Signs Quick Cheat-Sheet -->
+      <section class="neo-card card-sign-guide">
+        <div class="card-header-badge">
+          <span>📖</span> SUPPORTED SIGNS CHEAT SHEET
+        </div>
+        <div class="guide-chips-grid">
+          <div class="guide-chip"><span class="chip-sign">HELLO</span><span class="chip-desc">Open 5 fingers</span></div>
+          <div class="guide-chip"><span class="chip-sign">GOOD / YES</span><span class="chip-desc">Thumbs Up</span></div>
+          <div class="guide-chip"><span class="chip-sign">BAD / NO</span><span class="chip-desc">Thumbs Down / Pinch</span></div>
+          <div class="guide-chip"><span class="chip-sign">PEACE</span><span class="chip-desc">Index & Middle V</span></div>
+          <div class="guide-chip"><span class="chip-sign">I LOVE YOU</span><span class="chip-desc">Thumb, Index, Pinky</span></div>
+          <div class="guide-chip"><span class="chip-sign">OKAY</span><span class="chip-desc">Index + Thumb circle</span></div>
+          <div class="guide-chip"><span class="chip-sign">CALL ME</span><span class="chip-desc">Thumb + Pinky (Y)</span></div>
+          <div class="guide-chip"><span class="chip-sign">LETTERS</span><span class="chip-desc">A, B, C, L, U, W, Y</span></div>
+        </div>
+      </section>
+    </div>
 
     <!-- Session Stats Grid (3 Columns) -->
     <section class="stats-grid">

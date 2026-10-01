@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from backend.audio_processor import process_audio
 from backend.nlp_processor import process_text
 from backend.sign_mapper import map_words_to_videos
+from backend.gesture_recognizer import classify_gesture_from_landmarks
 import os
 
 app = Flask(__name__, static_url_path='', static_folder='static')
@@ -53,6 +54,16 @@ def handle_audio():
         'processed_words': processed_words,
         'video_sequence': video_sequence
     })
+
+@app.route('/api/predict-gesture', methods=['POST'])
+def handle_gesture():
+    data = request.get_json() or {}
+    landmarks = data.get('landmarks', [])
+    if not landmarks or len(landmarks) < 21:
+        return jsonify({'error': 'Invalid or missing landmarks data'}), 400
+        
+    result = classify_gesture_from_landmarks(landmarks)
+    return jsonify(result)
 
 if __name__ == '__main__':
     os.makedirs('datasets', exist_ok=True)
