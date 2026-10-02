@@ -35,11 +35,11 @@ def normalize_landmarks(landmarks):
 def classify_gesture_from_landmarks(landmarks):
     """
     Rule-based robust landmark classifier for 21 MediaPipe hand points.
-    Returns: dict(gesture=str, confidence=float, label=str)
+    Returns an uncalibrated heuristic label. This is not a trained classifier.
     """
     norm = normalize_landmarks(landmarks)
     if not norm:
-        return {"gesture": None, "confidence": 0.0, "label": "No Hand"}
+        return {"gesture": None, "label": "No Hand", "status": "no_hand", "heuristic": True}
 
     # Landmark indices
     # Wrist: 0
@@ -72,70 +72,70 @@ def classify_gesture_from_landmarks(landmarks):
 
     # 1. OKAY Sign: Thumb and Index tips close, Middle, Ring, Pinky extended
     if dist_thumb_index < 0.35 and middle_extended and ring_extended and pinky_extended:
-        return {"gesture": "OKAY", "confidence": 0.94, "label": "Okay / Perfect"}
+        return {"gesture": "OKAY", "label": "Okay / Perfect", "status": "matched", "heuristic": True}
 
     # 2. I LOVE YOU (ILY): Thumb, Index, Pinky extended; Middle and Ring curled
     if thumb_extended and index_extended and not middle_extended and not ring_extended and pinky_extended:
-        return {"gesture": "LOVE", "confidence": 0.96, "label": "I Love You (ILY)"}
+        return {"gesture": "LOVE", "label": "I Love You (ILY)", "status": "matched", "heuristic": True}
 
     # 3. PEACE / VICTORY: Index and Middle extended in V shape, others curled
     if index_extended and middle_extended and not ring_extended and not pinky_extended:
         # Distance between index tip and middle tip to ensure separation
         v_spread = distance_3d(index_tip, middle_tip)
         if v_spread > 0.3:
-            return {"gesture": "PEACE", "confidence": 0.95, "label": "Peace / Victory"}
+            return {"gesture": "PEACE", "label": "Peace / Victory", "status": "matched", "heuristic": True}
         else:
-            return {"gesture": "U", "confidence": 0.88, "label": "Letter U"}
+            return {"gesture": "U", "label": "Letter U", "status": "matched", "heuristic": True}
 
     # 4. THUMBS UP / GOOD: Thumb points upwards, other 4 fingers curled
     if thumb_extended and not index_extended and not middle_extended and not ring_extended and not pinky_extended:
         # Check if thumb tip is higher than thumb mcp (note: in screen coordinates, smaller y is higher)
         if thumb_tip[1] < thumb_mcp[1]:
-            return {"gesture": "GOOD", "confidence": 0.95, "label": "Good / Thumbs Up"}
+            return {"gesture": "GOOD", "label": "Good / Thumbs Up", "status": "matched", "heuristic": True}
         elif thumb_tip[1] > thumb_mcp[1]:
-            return {"gesture": "BAD", "confidence": 0.92, "label": "Bad / Thumbs Down"}
+            return {"gesture": "BAD", "label": "Bad / Thumbs Down", "status": "matched", "heuristic": True}
         else:
-            return {"gesture": "A", "confidence": 0.85, "label": "Letter A"}
+            return {"gesture": "A", "label": "Letter A", "status": "matched", "heuristic": True}
 
     # 5. LETTER L: Thumb and Index extended at approximately 90 degrees, others curled
     if thumb_extended and index_extended and not middle_extended and not ring_extended and not pinky_extended:
-        return {"gesture": "L", "confidence": 0.93, "label": "Letter L"}
+        return {"gesture": "L", "label": "Letter L", "status": "matched", "heuristic": True}
 
     # 6. LETTER Y / CALL ME: Thumb and Pinky extended, middle 3 curled
     if thumb_extended and not index_extended and not middle_extended and not ring_extended and pinky_extended:
-        return {"gesture": "Y", "confidence": 0.94, "label": "Letter Y / Call Me"}
+        return {"gesture": "Y", "label": "Letter Y / Call Me", "status": "matched", "heuristic": True}
 
     # 7. LETTER I: Only Pinky extended, other 4 curled
     if not thumb_extended and not index_extended and not middle_extended and not ring_extended and pinky_extended:
-        return {"gesture": "I", "confidence": 0.92, "label": "Letter I"}
+        return {"gesture": "I", "label": "Letter I", "status": "matched", "heuristic": True}
 
     # 8. POINT / YOU: Only Index extended
     if not thumb_extended and index_extended and not middle_extended and not ring_extended and not pinky_extended:
-        return {"gesture": "YOU", "confidence": 0.92, "label": "You / Pointing"}
+        return {"gesture": "YOU", "label": "You / Pointing", "status": "matched", "heuristic": True}
 
     # 9. LETTER W / THREE: Index, Middle, Ring extended; Pinky and Thumb curled
     if index_extended and middle_extended and ring_extended and not pinky_extended:
-        return {"gesture": "W", "confidence": 0.90, "label": "Letter W / Three"}
+        return {"gesture": "W", "label": "Letter W / Three", "status": "matched", "heuristic": True}
 
     # 10. HELLO / OPEN PALM / STOP: All 5 fingers extended and spread
     if thumb_extended and index_extended and middle_extended and ring_extended and pinky_extended:
-        return {"gesture": "HELLO", "confidence": 0.96, "label": "Hello / Open Hand"}
+        return {"gesture": "HELLO", "label": "Hello / Open Hand", "status": "matched", "heuristic": True}
 
     # 11. LETTER B: 4 fingers extended straight together, thumb folded across palm
     if not thumb_extended and index_extended and middle_extended and ring_extended and pinky_extended:
-        return {"gesture": "B", "confidence": 0.91, "label": "Letter B / Thank You"}
+        return {"gesture": "B", "label": "Letter B / Thank You", "status": "matched", "heuristic": True}
 
     # 12. YES / FIST: All 5 fingers curled into a fist
     if not thumb_extended and not index_extended and not middle_extended and not ring_extended and not pinky_extended:
-        return {"gesture": "YES", "confidence": 0.89, "label": "Yes / Fist"}
+        return {"gesture": "YES", "label": "Yes / Fist", "status": "matched", "heuristic": True}
 
     # 13. NO / PINCH: Thumb, Index, Middle pinch together
     if dist_thumb_index < 0.4 and dist_thumb_middle < 0.4 and not ring_extended and not pinky_extended:
-        return {"gesture": "NO", "confidence": 0.88, "label": "No"}
+        return {"gesture": "NO", "label": "No", "status": "matched", "heuristic": True}
 
     # 14. LETTER C: Curved fingers
     if not index_extended and not pinky_extended:
         if 0.35 < dist_thumb_index < 0.7:
-            return {"gesture": "C", "confidence": 0.82, "label": "Letter C"}
+            return {"gesture": "C", "label": "Letter C", "status": "matched", "heuristic": True}
 
-    return {"gesture": "RECOGNIZING", "confidence": 0.50, "label": "Analyzing..."}
+    return {"gesture": "UNKNOWN", "label": "Unknown or unsupported hand shape", "status": "unknown", "heuristic": True}

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SignWave — Real-Time Audio to Sign Language</title>
-  <meta name="description" content="A maximalist real-time audio to sign language converter. Speak into your mic and watch every word bloom into sign language videos and signs.">
+  <meta name="description" content="A real-time SignWave prototype for speech-to-sign media playback and experimental webcam hand-shape heuristics.">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.2/RecordRTC.min.js"></script>
-  <!-- MediaPipe AI Vision Pipeline -->
+  <!-- MediaPipe hand-tracking pipeline -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
 </head>
@@ -36,7 +36,7 @@
     <!-- Hero Header -->
     <header class="hero-header">
       <div class="badge-pill">
-        <span>⚡</span> LIVE TRANSLATION ENGINE
+        <span>⚡</span> SIGNWAVE PROTOTYPE
       </div>
       <h1 class="main-title">
         <div class="title-line-1">AUDIO TO</div>
@@ -46,7 +46,7 @@
         </div>
       </h1>
       <p class="hero-subtitle">
-        Bridge the communication gap. Speak out loud and watch every syllable burst into motion.
+        Convert finalized English speech or text into available sign clips, with fingerspelling fallback when media exists.
       </p>
       <button id="btnHowItWorks" class="btn-how-it-works">
         <span>❓</span> HOW IT WORKS
@@ -63,7 +63,7 @@
       <button id="tabSignToText" class="mode-tab" type="button">
         <span class="mode-tab-icon">🤟</span>
         <span class="mode-tab-text">SIGN ➔ SPEECH & TEXT</span>
-        <span class="mode-tab-tag neon-tag">AI WEBCAM</span>
+        <span class="mode-tab-tag neon-tag">EXPERIMENTAL</span>
       </button>
     </nav>
 
@@ -136,11 +136,11 @@
     <!-- ================= MODE 2: SIGN TO TEXT & SPEECH VIEW ================= -->
     <div id="signToTextView" class="mode-view" style="display: none;">
       
-      <!-- Webcam & AI Skeleton Tracker Stage -->
+      <!-- Webcam hand-tracking stage -->
       <section class="neo-card card-camera-stage">
         <div class="card-header-flex">
           <div class="card-header-badge">
-            <span>📷</span> WEBCAM AI SKELETON TRACKER
+            <span>📷</span> WEBCAM HAND TRACKER
           </div>
           <div class="cam-status-indicators">
             <span id="camStatusBadge" class="cam-status-pill status-off">CAMERA OFF</span>
@@ -156,7 +156,7 @@
           <div id="cameraPromptOverlay" class="camera-prompt-overlay">
             <div class="prompt-icon">🤟</div>
             <h3>ACTIVATE WEBCAM</h3>
-            <p>Position your hand within the frame. Real-time MediaPipe AI will track 21 skeletal landmarks and translate your signs.</p>
+            <p>Position your hand within the frame. MediaPipe tracks 21 hand landmarks for an experimental geometric heuristic, not a trained ISL classifier.</p>
             <button id="btnStartCamera" class="btn-neo-action pulse-glow" type="button">
               <span>▶</span> START CAMERA
             </button>
@@ -177,12 +177,12 @@
         </div>
       </section>
 
-      <!-- Real-Time AI Prediction HUD -->
+      <!-- Real-time heuristic prediction HUD -->
       <section class="prediction-hud-grid">
         <!-- Current Detected Sign -->
         <div class="neo-card card-prediction">
           <div class="card-header-badge">
-            <span>⚡</span> DETECTED GESTURE
+            <span>⚡</span> HEURISTIC GESTURE
           </div>
           <div class="predicted-sign-display">
             <div id="predictedSignBadge" class="predicted-sign-main">IDLE</div>
@@ -191,8 +191,8 @@
           
           <div class="confidence-container">
             <div class="confidence-labels">
-              <span>CONFIDENCE</span>
-              <span id="confidencePercentage">0%</span>
+              <span>HOLD STEADY</span>
+              <span id="confidencePercentage">UNVERIFIED</span>
             </div>
             <div class="confidence-track">
               <div id="confidenceBar" class="confidence-fill" style="width: 0%;"></div>
@@ -203,7 +203,7 @@
             <div class="commit-progress-bar">
               <div id="commitFill" class="commit-fill" style="width: 0%;"></div>
             </div>
-            <span class="commit-hint">Hold steady to add word to sentence</span>
+            <span class="commit-hint">Hold steady once, then release or change hand shape</span>
           </div>
         </div>
 
@@ -244,7 +244,7 @@
       <!-- Supported Signs Quick Cheat-Sheet -->
       <section class="neo-card card-sign-guide">
         <div class="card-header-badge">
-          <span>📖</span> SUPPORTED SIGNS CHEAT SHEET
+        <span>📖</span> EXPERIMENTAL HEURISTIC CHEAT SHEET
         </div>
         <div class="guide-chips-grid">
           <div class="guide-chip"><span class="chip-sign">HELLO</span><span class="chip-desc">Open 5 fingers</span></div>
@@ -319,6 +319,7 @@
     </div>
   </div>
 
+  <script src="session_core.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
