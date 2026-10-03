@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify, send_from_directory
 from backend.audio_processor import process_audio
 from backend.nlp_processor import process_text
-from backend.sign_mapper import map_words_to_videos
+from backend.sign_mapper import map_text_to_videos
+from backend.sign_catalogue import APP_ROOT
 from backend.gesture_recognizer import classify_gesture_from_landmarks
 import os
 
@@ -13,7 +14,7 @@ def serve_index():
 
 @app.route('/datasets/<path:filename>')
 def serve_datasets(filename):
-    return send_from_directory('datasets', filename)
+    return send_from_directory(APP_ROOT / 'datasets', filename)
 
 @app.route('/api/process-text', methods=['POST'])
 def handle_text():
@@ -23,7 +24,7 @@ def handle_text():
         return jsonify({'error': 'No text provided'}), 400
         
     processed_words = process_text(text)
-    video_sequence = map_words_to_videos(processed_words)
+    video_sequence = map_text_to_videos(text)
     
     return jsonify({
         'original_text': text,
@@ -47,7 +48,7 @@ def handle_audio():
     processed_words = process_text(recognized_text)
     
     # 3. Map to Sign Language Videos
-    video_sequence = map_words_to_videos(processed_words)
+    video_sequence = map_text_to_videos(recognized_text)
     
     return jsonify({
         'original_text': recognized_text,
@@ -66,5 +67,5 @@ def handle_gesture():
     return jsonify(result)
 
 if __name__ == '__main__':
-    os.makedirs('datasets', exist_ok=True)
+    (APP_ROOT / 'datasets').mkdir(exist_ok=True)
     app.run(debug=True, port=5000)

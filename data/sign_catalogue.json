@@ -1,0 +1,2275 @@
+{
+  "schema_version": 1,
+  "catalogue_status": "developer_preview",
+  "verification_notice": "This catalogue is generated from repository filenames only. Language, sign correctness, source, licence, and reuse permissions are unverified.",
+  "entries": [
+    {
+      "id": "fingerspelling.dev.0",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "0"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/0.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.1",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "1"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/1.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.2",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "2"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/2.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.3",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "3"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/3.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.4",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "4"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/4.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.5",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "5"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/5.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.6",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "6"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/6.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.7",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "7"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/7.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.8",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "8"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/8.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.9",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "9"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/9.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.a",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "a"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/a.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.after",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "after"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/after.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.again",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "again"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/again.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.against",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "against"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/against.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.age",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "age"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/age.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.all",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "all"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/all.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.alone",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "alone"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/alone.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.also",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "also"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/also.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.and",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "and"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/and.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.ask",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "ask"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/ask.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.at",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "at"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/at.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.b",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "b"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/b.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.be",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "be"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/be.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.beautiful",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "beautiful"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/beautiful.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.before",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "before"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/before.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.best",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "best"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/best.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.better",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "better"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/better.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.busy",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "busy"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/busy.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.but",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "but"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/but.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.bye",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "bye"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/bye.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.c",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "c"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/c.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.can",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "can"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/can.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.cannot",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "cannot"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/cannot.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.change",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "change"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/change.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.college",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "college"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/college.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.come",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "come"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/come.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.computer",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "computer"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/computer.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.d",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "d"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/d.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.day",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "day"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/day.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.distance",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "distance"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/distance.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.do-not",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "do",
+        "not"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/do not.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.do",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "do"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/do.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.does-not",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "does",
+        "not"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/does not.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.e",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "e"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/e.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.eat",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "eat"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/eat.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.engineer",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "engineer"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/engineer.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.f",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "f"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/f.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.fight",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "fight"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/fight.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.finish",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "finish"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/finish.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.from",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "from"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/from.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.g",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "g"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/g.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.glitter",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "glitter"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/glitter.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.go",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "go"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/go.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.god",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "god"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/god.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.gold",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "gold"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/gold.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.good",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "good"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/good.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.great",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "great"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/great.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.h",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "h"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/h.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.hand",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "hand"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/hand.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.hands",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "hands"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/hands.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.happy",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "happy"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/happy.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.hello",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "hello"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/hello.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.help",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "help"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/help.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.her",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "her"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/her.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.here",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "here"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/here.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.his",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "his"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/his.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.home",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "home"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/home.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.homepage",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "homepage"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/homepage.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.how",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "how"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/how.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.i",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "i"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/i.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.invent",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "invent"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/invent.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.it",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "it"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/it.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.j",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "j"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/j.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.k",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "k"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/k.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.keep",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "keep"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/keep.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.l",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "l"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/l.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.language",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "language"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/language.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.laugh",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "laugh"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/laugh.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.learn",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "learn"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/learn.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.m",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "m"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/m.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.me",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "me"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/me.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.more",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "more"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/more.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.my",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "my"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/my.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.n",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "n"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/n.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.name",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "name"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/name.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.next",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "next"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/next.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.not",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "not"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/not.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.now",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "now"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/now.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.o",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "o"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/o.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.of",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "of"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/of.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.on",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "on"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/on.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.our",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "our"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/our.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.out",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "out"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/out.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.p",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "p"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/p.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.pretty",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "pretty"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/pretty.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.q",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "q"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/q.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.r",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "r"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/r.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.right",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "right"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/right.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.s",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "s"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/s.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.sad",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "sad"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/sad.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.safe",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "safe"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/safe.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.see",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "see"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/see.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.self",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "self"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/self.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.sign",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "sign"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/sign.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.sing",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "sing"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/sing.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.so",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "so"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/so.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.sound",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "sound"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/sound.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.stay",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "stay"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/stay.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.study",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "study"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/study.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.t",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "t"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/t.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.talk",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "talk"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/talk.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.television",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "television"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/television.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.thank-you",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "thank",
+        "you"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/thank you.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.thank",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "thank"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/thank.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.that",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "that"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/that.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.they",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "they"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/they.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.this",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "this"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/this.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.those",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "those"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/those.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.time",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "time"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/time.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.to",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "to"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/to.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.type",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "type"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/type.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.u",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "u"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/u.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.us",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "us"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/us.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.v",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "v"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/v.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.w",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "w"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/w.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.walk",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "walk"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/walk.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.wash",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "wash"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/wash.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.way",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "way"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/way.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.we",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "we"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/we.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.welcome",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "welcome"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/welcome.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.what",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "what"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/what.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.when",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "when"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/when.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.where",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "where"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/where.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.which",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "which"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/which.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.who",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "who"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/who.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.whole",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "whole"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/whole.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.whose",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "whose"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/whose.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.why",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "why"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/why.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.will",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "will"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/will.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.with",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "with"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/with.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.without",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "without"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/without.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.words",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "words"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/words.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.work",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "work"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/work.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.world",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "world"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/world.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.wrong",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "wrong"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/wrong.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.x",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "x"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/x.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.y",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "y"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/y.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.you",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "you"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/you.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.your",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "your"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/your.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "sign.dev.yourself",
+      "entry_type": "sign",
+      "language": "unverified",
+      "words": [
+        "yourself"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/yourself.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    },
+    {
+      "id": "fingerspelling.dev.z",
+      "entry_type": "fingerspelling",
+      "language": "unverified",
+      "words": [
+        "z"
+      ],
+      "approved_aliases": [],
+      "asset_path": "datasets/z.mp4",
+      "source": "bundled repository asset; provenance unknown",
+      "reuse_license": "unknown",
+      "linguistic_review": "unreviewed",
+      "release_status": "developer_preview",
+      "notes": "Filename-derived catalogue entry. The filename is not proof that the video is correct ISL."
+    }
+  ]
+}

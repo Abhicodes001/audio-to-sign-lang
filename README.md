@@ -2,11 +2,13 @@
 
 An interactive web application that bridges the communication gap by converting spoken English audio directly into sign language. 
 
-The system captures spoken audio via the microphone, converts it to text using Google Speech Recognition, uses Natural Language Processing (NLP) to extract relevant keywords, and seamlessly maps them against a dataset of sign language videos. If a word isn't available, the system will fall back to spelling it out character-by-character.
+SignWave accumulates browser speech results, with Google Speech Recognition as an audio fallback, and matches text against an explicit media catalogue. Matching preserves words and negation, and falls back to individual letters/digits. Missing characters are reported explicitly.
+
+All 151 bundled assets are developer previews: language, linguistic correctness, provenance and reuse permission are unverified. There are zero verified ISL release assets. See [project status](docs/PROJECT_STATUS.md) and [coverage and review needs](docs/DATASET_COVERAGE.md).
 
 ## Features
 - **Live Voice Capture**: Directly records audio from your browser.
-- **NLP Text Processing**: Uses NLTK to tokenize, lowercase, and lemmatize sentences to match the root dictionary words.
+- **Catalogue Matching**: Longest phrase, exact word, reviewed alias, then fingerspelling; no stemming or stopword removal.
 - **Dynamic Video Mapping**: Automatically strings together the appropriate sequence of sign language videos.
 - **Fallback Finger Spelling**: Dynamically splits unknown words into individual letter gestures automatically.
 - **Portable & Secure**: Zero hardcoded paths, runs on any OS (Windows/macOS/Linux).
@@ -22,13 +24,15 @@ Audio-to-Sign-Language/
 │
 ├── backend/               # Core Python processing logic
 │   ├── audio_processor.py # Speech-to-text conversion
-│   ├── nlp_processor.py   # Text tokenization & lemmatization
-│   └── sign_mapper.py     # Maps NLP words to video files
+│   ├── nlp_processor.py   # Meaning-preserving tokenization
+│   ├── sign_catalogue.py # Catalogue indexes and validation
+│   └── sign_mapper.py     # Maps original text via the catalogue
 │
-├── datasets/              # Contains all the sign language videos (.mp4/.gif)
+├── datasets/              # Unverified developer-preview video assets
+├── data/sign_catalogue.json # Asset metadata and review status
 │
 ├── scripts/               # Helper scripts
-│   └── setup_dataset.py   # Script to extract and format new datasets
+│   └── manage_catalogue.py # Safe local import, generation, validation and audit
 │
 └── static/                # Frontend web assets
     ├── index.html         # User interface
@@ -58,16 +62,19 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-*(Note: The first time you run the application, the NLTK library will automatically download the required language corpuses in the background).*
+Text matching does not require NLTK corpora or download linguistic datasets.
 
 ## Dataset Setup Instructions
-A comprehensive default sign language dataset is securely stored in the `datasets/` folder. All dataset files MUST be purely lowercase with spaces (e.g., `thank you.mp4`) to exactly match the NLP output. 
+Catalogue entries identify assets by stable IDs and application-relative paths. Filename labels are only unreviewed candidates. MP4/WebM are accepted by the video pipeline; codec compatibility requires browser testing.
 
-If you want to add your own custom videos in bulk, you can compress them into a `.zip` file and run our helper script:
+Dry-run a local import, then apply only after verifying reuse permission:
 ```bash
-python scripts/setup_dataset.py path/to/your/custom_videos.zip
+python scripts/manage_catalogue.py import path/to/local_media
+python scripts/manage_catalogue.py import path/to/local_media --apply --permission-confirmed
+python scripts/manage_catalogue.py generate
+python scripts/manage_catalogue.py validate
 ```
-This script will safely extract them to the `datasets/` folder and format the filenames correctly.
+Any collision aborts copying; existing files are never overwritten. Generation preserves existing catalogue IDs and review metadata. Restart Flask after editing the catalogue. The legacy ZIP importer is retired.
 
 ## How to Run
 
@@ -87,15 +94,19 @@ Here are the essential commands for everyday usage:
 python app.py
 ```
 
-**Add a new dataset (Zip File):**
+**Audit the catalogue:**
 ```bash
-python scripts/setup_dataset.py C:\path\to\new_signs.zip
+python scripts/manage_catalogue.py audit
 ```
 
-**Run NLTK downloads manually (Optional):**
+**Run regression checks:**
 ```bash
-python -c "import nltk; nltk.download('punkt'); nltk.download('stopwords'); nltk.download('wordnet')"
+python -m unittest discover -s tests
+node tests/test_session_core.js
+node --check static/script.js
 ```
 
 ## License
 MIT License
+
+This repository's stated code licence does not establish the provenance or reuse rights of bundled media.

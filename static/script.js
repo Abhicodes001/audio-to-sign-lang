@@ -472,8 +472,8 @@ function playNextSignVideo(owner) {
   stagePlaceholder.style.display = 'none';
   videoContainer.style.display = 'block';
 
-  if (item.type === 'letter') {
-    currentWordBadge.textContent = `Letter: ${String(item.word).toUpperCase()}`;
+  if (item.type === 'letter' || item.type === 'digit') {
+    currentWordBadge.textContent = `${item.type === 'digit' ? 'Digit' : 'Letter'}: ${String(item.word).toUpperCase()}`;
     renderFingerspellingTiles(item.parent_word || item.parentWord || item.sourceText || item.word, item.word);
   } else {
     currentWordBadge.textContent = appState.playbackOwner === 'demo'

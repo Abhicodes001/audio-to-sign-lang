@@ -1,6 +1,6 @@
 # SignWave Project Status
 
-Last updated: 2026-10-02
+Last updated: 2026-10-03
 Branch: `codex/phase-1-baseline`
 
 ## Current Architecture
@@ -9,9 +9,10 @@ SignWave is currently a Flask application with a static HTML/CSS/JavaScript fron
 
 - `app.py` serves the frontend, dataset media, and JSON APIs.
 - `backend/audio_processor.py` accepts uploaded audio and calls the Google Web Speech API through `SpeechRecognition`.
-- `backend/nlp_processor.py` lowercases, tokenizes, strips punctuation, and lemmatizes text with NLTK, with a simple split fallback when NLTK data is unavailable.
-- `backend/sign_mapper.py` maps processed words to local files in `datasets/`. If a word clip is missing, it attempts character-by-character fingerspelling using local letter or digit clips.
+- `backend/nlp_processor.py` tokenizes without stemming, lemmatizing, or removing stopwords/negation. Unicode names and contractions retain their characters; unsupported characters are explicit in the sequence.
+- `backend/sign_mapper.py` caches the catalogue index and maps original text by longest phrase, exact word, reviewed alias, then character-by-character fingerspelling. Phrases cannot cross punctuation boundaries.
 - `backend/sign_mapper.py` reports missing fallback characters explicitly so the frontend can show unavailable media.
+- `backend/sign_catalogue.py` loads `data/sign_catalogue.json`, builds an in-memory index once, checks playback paths, and provides catalogue validation. Paths are relative to the application, independent of the shell working directory.
 - `backend/gesture_recognizer.py` contains a rule-based MediaPipe landmark classifier. It is not a trained sign-language recognition model and no longer returns fabricated confidence values.
 - `static/index.html`, `static/style.css`, and `static/script.js` implement the current two-mode frontend: speech/text to sign videos, and webcam landmark tracking to text/speech.
 - `static/session_core.js` contains small state helpers for speech accumulation, ordered async responses, and duplicate gesture commit prevention. These helpers are covered by Node regression checks.
@@ -23,6 +24,8 @@ SignWave is currently a Flask application with a static HTML/CSS/JavaScript fron
 - Dataset media serving: `GET /datasets/<filename>` serves local sign video assets from `datasets/`.
 - Browser speech flow: the frontend now accumulates finalized Web Speech API segments, displays interim speech separately, and only converts finalized segments.
 - Text conversion requests are session-scoped and ordered; stale responses from old recordings or mode changes are ignored.
+- Text-to-sign matching now uses the validated catalogue instead of repeatedly scanning `datasets/` by filename.
+- Matching returns original text, matched catalogue entry metadata, fallback reason, and character/word boundaries.
 - Audio upload is now a controlled fallback when browser speech has no finalized text, rather than a duplicate conversion path after every stop.
 - Fallback fingerspelling: unsupported words can be decomposed into letter or digit clips when those files exist; missing fallback characters are surfaced as missing media.
 - Idle demo playback is separated from user output and does not overwrite user transcripts.
@@ -33,7 +36,7 @@ SignWave is currently a Flask application with a static HTML/CSS/JavaScript fron
 
 ### Supported Now
 
-- English text to local sign video lookup for the tracked `datasets/*.mp4` vocabulary.
+- English text to developer-preview media lookup for the tracked `datasets/*.mp4` vocabulary; filenames remain unverified label candidates, not proof of ISL.
 - Fingerspelling fallback for unsupported alphanumeric characters when the matching `datasets/<character>.mp4` file exists.
 - Local alphabet and digit media files: `a-z` and `0-9`.
 - Finite tracked word-sign clips, including examples such as `hello`, `good`, `thank you`, `welcome`, `language`, `college`, `computer`, `help`, `learn`, `work`, `world`, `you`, and `your`.
@@ -95,11 +98,21 @@ Acceptance criteria:
 
 ### Phase 2: Reliable Speech/Text To ISL Video Pipeline
 
-- [ ] Create an explicit sign inventory from dataset files.
-- [ ] Add API metadata that distinguishes word signs, fingerspelled letters, and missing characters.
-- [ ] Prevent frontend fallback from fabricating video URLs for unavailable clips.
-- [ ] Add clear UI messaging for unsupported words and missing fingerspelling media.
-- [ ] Verify and document any ISL dataset source before claiming ISL support.
+- [x] Create an explicit sign inventory from dataset files.
+- [x] Add stable IDs, language, words/phrases, approved aliases, asset paths, source, reuse/licence information, and linguistic-review status.
+- [x] Mark unknown provenance, unverified language, unknown licence, and developer-preview status honestly.
+- [x] Distinguish developer-preview assets from verified release assets.
+- [x] Implement deterministic matching: longest phrase, exact word, reviewed alias, then fingerspelling.
+- [x] Preserve negation and meaning by removing lemmatization/stemming and stopword assumptions.
+- [x] Return original text, matched entry, fallback reason, and boundaries in playback sequence items.
+- [x] Validate alphabet/digit coverage, broken paths, duplicate entries, unsupported media formats, and missing metadata.
+- [x] Return explicit unsupported results for missing fallback characters.
+- [x] Resolve paths relative to the application root.
+- [x] Index the catalogue instead of scanning `datasets/` for every lookup.
+- [x] Add safe local dataset-import and validation commands with collision reporting.
+- [x] Produce an honest coverage report listing assets needing human help.
+
+Implementation is complete. Linguistic and release acceptance remains blocked: 151 developer-preview entries (115 word/phrase labels, 36 character labels), zero verified release entries. The 36/36 alphabet/digit coverage count measures file presence, not correctness or decodability. No datasets were downloaded or imported during this phase.
 
 Acceptance criteria:
 
@@ -146,8 +159,9 @@ Acceptance criteria:
 ## Data And Model Dependencies
 
 - Local media in `datasets/` is the only sign-video source currently used by the app.
-- Dataset files are tracked in git, but this baseline did not verify source, permissions, licenses, signer consent, or whether each clip is Indian Sign Language.
-- NLTK is required for full tokenization and lemmatization. The code falls back to a simpler splitter if NLTK data is unavailable.
+- Dataset files are tracked in git and indexed in `data/sign_catalogue.json`, but source, permissions, licences, signer consent, and whether each clip is Indian Sign Language remain unverified.
+- Current catalogue coverage is documented in `docs/DATASET_COVERAGE.md`.
+- NLTK is no longer used for sign matching because stemming or stopword removal can change meaning.
 - Speech recognition uses Google through the `SpeechRecognition` package and requires network access at runtime.
 - Frontend webcam tracking depends on MediaPipe scripts loaded from jsDelivr CDN.
 - No trained ML model file is present in the repository.
@@ -155,6 +169,7 @@ Acceptance criteria:
 ## Unresolved Blockers
 
 - Verified ISL video dataset and permissions are unavailable.
+- All current catalogue entries are developer-preview only and need source/licence/language review.
 - Trained recognition data/model for supported ISL signs is unavailable.
 - Trained or evaluated fingerspelling recognition is unavailable.
 - Manual microphone, camera, and browser permission checks require an interactive browser and user hardware.
@@ -195,6 +210,28 @@ node tests/test_session_core.js
 node --check static/script.js
 ```
 
+Validate/audit the sign catalogue:
+
+```bash
+python scripts/manage_catalogue.py validate
+python scripts/manage_catalogue.py audit
+```
+
+Import local media after verifying reuse permission (dry run first):
+
+```bash
+python scripts/manage_catalogue.py import path/to/local_media
+python scripts/manage_catalogue.py import path/to/local_media --apply --permission-confirmed
+python scripts/manage_catalogue.py generate
+python scripts/manage_catalogue.py validate
+```
+
+Imports accept MP4/WebM only, abort all copying on collisions, and never overwrite files. `generate` appends new preview entries and preserves existing IDs/review metadata. Restart Flask after editing the catalogue because indexes are cached.
+
+The former `scripts/setup_dataset.py` ZIP importer is retired: it exits without extracting or copying. README instructions now point to the safe importer. The README's MIT code licence claim is not evidence of dataset reuse rights.
+
+To restrict API matching to reviewed release entries, set `SIGNWAVE_CATALOGUE_MODE=release` before starting Flask (PowerShell: `$env:SIGNWAVE_CATALOGUE_MODE = 'release'`). With today's catalogue every character returns unsupported in that mode. This filters API matching only; it is not a deployment or media-distribution permission gate. The local frontend's separately labelled idle demos remain developer previews.
+
 List tracked dataset media:
 
 ```bash
@@ -205,10 +242,11 @@ git ls-files datasets
 
 Automated checks cover deterministic backend behavior and extracted frontend state logic:
 
-- NLP fallback cleanup.
+- Meaning-preserving tokenization.
 - Video mapping for available word signs.
 - Letter fallback for unsupported words when letter media exists.
 - Explicit missing-media entries when fallback character media is absent.
+- Catalogue phrase precedence, punctuation/case handling, reviewed aliases, repeated letters, numbers, negation, missing fallback characters, and validation errors.
 - API error handling for missing text and invalid landmarks.
 - Backend gesture heuristic output no longer includes fabricated confidence.
 - Transcript accumulation and duplicate final speech suppression.
@@ -223,3 +261,16 @@ Manual checks still required:
 - Uploaded audio recognition through Google Speech Recognition.
 - Webcam permission, MediaPipe CDN loading, and hand tracking.
 - Video playback quality and sign correctness.
+
+### Phase 2 Checks Actually Run (2026-10-03)
+
+- `python -m unittest discover -s tests`: 26 tests passed, including safe import collisions/dry runs, permission confirmation, metadata preservation, missing file coverage, Unicode/contraction handling, release filtering, matching, and API regressions. Fixture media are empty/test bytes; these tests do not claim video decoding or linguistic validity.
+- Catalogue validation: 151 entries, 0 errors, 454 warnings (preview/review/licence warnings for all entries plus `mic3.png`, a non-playback image).
+- Flask test-client smoke check from shell working directory `C:/`: text conversion and `/datasets/a.mp4` both returned HTTP 200; phrase ordering, repeated letters, digits and negation were retained.
+- `node tests/test_session_core.js`: passed on retry outside the Windows sandbox after sandbox path resolution returned EPERM.
+- `node --check static/script.js`: passed.
+- Python compilation and `git diff --check`: passed. The retired ZIP command was checked to exit with a migration message.
+- Local Flask server HTTP smoke check: `/api/process-text` returned the expected original and tokenized text.
+- Live microphone/camera, browser decoding, and linguistic review have not been performed.
+
+Phase 3 engineering can begin when requested; trained recognition and verified ISL claims still require reviewed data/models. No later-phase work is included here.
