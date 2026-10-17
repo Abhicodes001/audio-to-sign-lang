@@ -61,7 +61,7 @@ pip install -r requirements.txt
 *(Note: The first time you run the application the NLTK library will automatically download the required language corpuses in the background).*
 
 ## Dataset Setup Instructions
-A comprehensive default sign language dataset is securely stored in the `datasets/` folder. All dataset files MUST be purely lowercase with spaces (e.g., `thank you.mp4`) to exactly match the NLP output. 
+A comprehensive default sign language dataset is securely stored in the `datasets/` folder. All dataset files MUST be purely lowercase with spaces (e.g., `thank you.mp4`) to exactly match  NLP output. 
 
 If you want to add your own custom videos in bulk, you can compress them into a `.zip` file and run our helper script:
 ```bash
